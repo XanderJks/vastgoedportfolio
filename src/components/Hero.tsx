@@ -57,7 +57,7 @@ export default function Hero() {
                   BEELD
                 </div>
               </div>
-              <div className="overflow-hidden">
+              <div>
                 <div className="text-[clamp(2rem,5vw,4rem)] font-light tracking-wide text-zinc-400 fade-in-up" style={{ fontFamily: 'Playfair Display, serif', animationDelay: '0.3s' }}>
                   voor vastgoed
                 </div>
