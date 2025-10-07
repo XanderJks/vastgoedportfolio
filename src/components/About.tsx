@@ -19,7 +19,7 @@ export default function About() {
               </p>
 
               <p>
-                Sinds 2016 werken we met dezelfde filosofie: geen compromissen op kwaliteit,
+                We werken met dezelfde filosofie: geen compromissen op kwaliteit,
                 geen excuses voor middelmatigheid. Elke klus behandelen we alsof het de
                 belangrijkste is.
               </p>
@@ -48,7 +48,7 @@ export default function About() {
             <div className="sticky top-32">
               <div className="aspect-[3/4] mb-8 overflow-hidden">
                 <img
-                  src="https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  src="https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="Studio"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 />
@@ -56,9 +56,9 @@ export default function About() {
 
               <div className="space-y-12">
                 <div className="border-l-2 border-amber-500 pl-8">
-                  <div className="text-5xl font-bold text-white mb-3">DJI Inspire 3</div>
+                  <div className="text-5xl font-bold text-white mb-3">4K Resolutie</div>
                   <p className="text-zinc-500">
-                    8K sensor, full-frame cinematografie, dual operator setup voor maximale controle
+                    Crystal clear 4K beeldkwaliteit voor professionele resultaten
                   </p>
                 </div>
 

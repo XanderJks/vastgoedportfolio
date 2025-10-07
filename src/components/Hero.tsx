@@ -108,8 +108,8 @@ export default function Hero() {
                 className="absolute -bottom-12 -left-12 bg-white text-black p-8 rotate-3 hover:rotate-0 transition-transform duration-500 cursor-pointer"
                 style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.5)' }}
               >
-                <div className="text-6xl font-bold mb-2">500+</div>
-                <div className="text-sm tracking-widest uppercase opacity-60">Projecten</div>
+                <div className="text-6xl font-bold mb-2">Projecten</div>
+                <div className="text-sm tracking-widest uppercase opacity-60">Gedaan</div>
               </div>
 
               <div

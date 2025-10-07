@@ -80,9 +80,9 @@ export default function Services() {
           </div>
 
           <div className="bg-black p-12 hover:bg-zinc-950 transition-colors group cursor-pointer">
-            <div className="text-5xl font-bold text-white mb-4 group-hover:text-amber-500 transition-colors">8K</div>
+            <div className="text-5xl font-bold text-white mb-4 group-hover:text-amber-500 transition-colors">4K</div>
             <p className="text-zinc-400 leading-relaxed">
-              Nieuwste DJI Inspire 3 met 8K sensor. Toekomstbestendig materiaal.
+              Professionele 4K kwaliteit voor scherpe, gedetailleerde beelden.
             </p>
           </div>
 
