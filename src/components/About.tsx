@@ -1,85 +1,93 @@
 export default function About() {
   return (
-    <section id="about" className="relative bg-white py-32">
-      <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-          <div className="lg:col-span-5">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="h-[1px] w-12 bg-zinc-900"></div>
-              <span className="text-sm tracking-[0.3em] uppercase text-zinc-600">Over Ons</span>
-            </div>
-            <h2 className="text-5xl lg:text-7xl font-light text-zinc-900 mb-12">
-              Studio
+    <section id="about" className="relative bg-black py-40">
+      <div className="absolute inset-0 grid-lines opacity-10"></div>
+
+      <div className="max-w-[1600px] mx-auto px-8 lg:px-16 relative">
+        <div className="grid lg:grid-cols-12 gap-32">
+          <div className="lg:col-span-7">
+            <h2 className="text-7xl lg:text-9xl font-bold text-white mb-16 leading-none">
+              We zijn<br/>
+              <span className="text-outline">obsessief</span>
             </h2>
 
-            <div className="space-y-8 text-lg text-zinc-600 leading-relaxed">
+            <div className="space-y-12 text-xl text-zinc-400 leading-relaxed">
               <p>
-                Wij zijn een klein team dat focust op architecturale fotografie vanuit de lucht.
-                Geen grootschalige productie, maar persoonlijke aandacht voor elk project.
+                Elke shot is een studie in compositie, licht, en timing. Wij geloven dat
+                vastgoedfotografie een kunstdiscipline is die technische perfectie vereist
+                én een artistieke visie.
               </p>
 
               <p>
-                Onze aanpak is simpel: vooraf goed sparren over wat je wilt communiceren,
-                de juiste dag en tijd kiezen voor het licht, en dan schieten. Geen overdaad
-                aan filters of effecten in post-productie.
+                Sinds 2016 werken we met dezelfde filosofie: geen compromissen op kwaliteit,
+                geen excuses voor middelmatigheid. Elke klus behandelen we alsof het de
+                belangrijkste is.
               </p>
 
               <p>
-                We werken hoofdzakelijk voor architectenbureaus, ontwikkelaars en
-                vastgoedmakelaars die waarde hechten aan een serieuze visuele identiteit.
+                Ons team bestaat uit gecertificeerde piloten en fotografen die hun vak serieus
+                nemen. We investeren constant in nieuwe apparatuur, technieken en kennis.
+                Want stilstand is achteruitgang.
               </p>
+            </div>
+
+            <div className="mt-16 pt-16 border-t border-white/10">
+              <h3 className="text-3xl font-bold text-white mb-8">Voor wie we werken</h3>
+              <div className="grid grid-cols-2 gap-8">
+                {['Architecten', 'Ontwikkelaars', 'Makelaars', 'Hoteliers', 'Investeerders', 'Overheden'].map((client) => (
+                  <div key={client} className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-amber-500"></div>
+                    <span className="text-zinc-400">{client}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          <div className="lg:col-span-7">
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              <div className="aspect-[3/4] overflow-hidden">
+          <div className="lg:col-span-5">
+            <div className="sticky top-32">
+              <div className="aspect-[3/4] mb-8 overflow-hidden">
                 <img
                   src="https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Drone equipment"
-                  className="w-full h-full object-cover grayscale"
+                  alt="Studio"
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 />
               </div>
-              <div className="aspect-[3/4] overflow-hidden mt-12">
-                <img
-                  src="https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Architectural detail"
-                  className="w-full h-full object-cover grayscale"
-                />
-              </div>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-12 border-t border-zinc-200">
-              <div>
-                <h3 className="text-sm tracking-widest uppercase text-zinc-400 mb-4">Werkwijze</h3>
-                <p className="text-zinc-600 leading-relaxed">
-                  Intake gesprek, locatie verkenning, shoot op afspraak,
-                  levering binnen 48 uur. Eén revisieronde inbegrepen.
-                </p>
-              </div>
+              <div className="space-y-12">
+                <div className="border-l-2 border-amber-500 pl-8">
+                  <div className="text-5xl font-bold text-white mb-3">DJI Inspire 3</div>
+                  <p className="text-zinc-500">
+                    8K sensor, full-frame cinematografie, dual operator setup voor maximale controle
+                  </p>
+                </div>
 
-              <div>
-                <h3 className="text-sm tracking-widest uppercase text-zinc-400 mb-4">Apparatuur</h3>
-                <p className="text-zinc-600 leading-relaxed">
-                  DJI Inspire 3 met Zenmuse X9-8K. Voor interieur: Sony A7R V.
-                  Backup systemen altijd aanwezig.
-                </p>
+                <div className="border-l-2 border-white/10 pl-8">
+                  <div className="text-5xl font-bold text-white mb-3">ROC Certified</div>
+                  <p className="text-zinc-500">
+                    Volledig gecertificeerd en verzekerd voor commerciële vluchten tot 5M dekking
+                  </p>
+                </div>
+
+                <div className="border-l-2 border-white/10 pl-8">
+                  <div className="text-5xl font-bold text-white mb-3">48h Delivery</div>
+                  <p className="text-zinc-500">
+                    Standaard levering binnen 2 werkdagen, rush mogelijk binnen 24 uur
+                  </p>
+                </div>
               </div>
 
-              <div>
-                <h3 className="text-sm tracking-widest uppercase text-zinc-400 mb-4">Certificering</h3>
-                <p className="text-zinc-600 leading-relaxed">
-                  ROC-light certificaat, verzekerd tot 5M, ervaring sinds 2016.
-                  Vergunningen regelen we zelf.
+              <div className="mt-16 p-12 bg-gradient-to-br from-amber-500 to-orange-600 text-black">
+                <div className="text-lg font-medium mb-4">Klaar voor je project?</div>
+                <p className="text-black/70 mb-8">
+                  Laten we kijken wat mogelijk is. Geen verplichtingen, gewoon een goed gesprek.
                 </p>
-              </div>
-
-              <div>
-                <h3 className="text-sm tracking-widest uppercase text-zinc-400 mb-4">Locatie</h3>
-                <p className="text-zinc-600 leading-relaxed">
-                  Gevestigd in Amsterdam. Actief in Randstad, op aanvraag
-                  ook landelijk of internationaal.
-                </p>
+                <a
+                  href="#contact"
+                  className="inline-block px-8 py-4 bg-black text-white hover:bg-white hover:text-black transition-colors"
+                >
+                  <span className="text-sm tracking-wider uppercase">Plan een call</span>
+                </a>
               </div>
             </div>
           </div>

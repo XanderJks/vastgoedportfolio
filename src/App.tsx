@@ -10,7 +10,7 @@ function App() {
   const [activeSection, setActiveSection] = useState('home');
 
   return (
-    <div className="min-h-screen bg-zinc-50">
+    <div className="min-h-screen bg-[#0a0a0a]">
       <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
       <Hero />
       <Services />

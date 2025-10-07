@@ -1,97 +1,96 @@
-import { Minus } from 'lucide-react';
-import { useState } from 'react';
-
 export default function Services() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  const services = [
-    {
-      number: '01',
-      title: 'Luchtfotografie',
-      subtitle: 'Architectuur & Context',
-      description: 'Groothoek composities die de relatie tussen gebouw en omgeving tonen. Focus op lijnenspel, symmetrie en natuurlijk licht.',
-    },
-    {
-      number: '02',
-      title: 'Videografie',
-      subtitle: 'Bewegende Verhalen',
-      description: 'Cinematografische bewegingen die ruimte en sfeer communiceren. Geen flashy effecten, wel doordachte shots.',
-    },
-    {
-      number: '03',
-      title: 'Interieur',
-      subtitle: 'Ruimte & Licht',
-      description: 'Statische composities die architecturale details en materialen benadrukken. Minimale styling, maximum impact.',
-    },
-    {
-      number: '04',
-      title: 'Development',
-      subtitle: 'Bouwproces',
-      description: 'Periodieke documentatie van bouwfases. Consistente hoeken en tijdstippen voor vergelijkbare beelden.',
-    }
-  ];
+  const marqueeText = "• DRONE FOTOGRAFIE • VIDEOGRAFIE • ARCHITECTUUR • VASTGOED • 3D MAPPING • TIJDLAPSES ";
 
   return (
-    <section id="services" className="relative bg-white py-32">
-      <div className="max-w-[1400px] mx-auto px-8 lg:px-12">
-        <div className="mb-24">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="h-[1px] w-12 bg-zinc-900"></div>
-            <span className="text-sm tracking-[0.3em] uppercase text-zinc-600">Wat We Doen</span>
+    <section id="services" className="relative bg-black py-40 overflow-hidden">
+      <div className="absolute inset-0 grid-lines opacity-10"></div>
+
+      <div className="relative mb-32 overflow-hidden border-y border-white/10">
+        <div className="flex animate-scroll">
+          <div className="flex items-center whitespace-nowrap py-8">
+            {[...Array(3)].map((_, i) => (
+              <span key={i} className="text-6xl md:text-8xl font-bold text-outline tracking-tight px-8">
+                {marqueeText}
+              </span>
+            ))}
           </div>
-          <h2 className="text-5xl lg:text-7xl font-light text-zinc-900 mb-6">
-            Diensten
-          </h2>
         </div>
+      </div>
 
-        <div className="space-y-0 border-t border-zinc-200">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="group border-b border-zinc-200 transition-colors hover:bg-zinc-50"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <div className="py-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-1">
-                  <span className="text-sm text-zinc-400 tracking-wider">{service.number}</span>
-                </div>
+      <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
+        <div className="grid lg:grid-cols-2 gap-32 mb-32">
+          <div>
+            <h2 className="text-7xl lg:text-9xl font-bold text-white mb-8 leading-none">
+              Wat we<br/>
+              <span className="text-outline">maken</span>
+            </h2>
+          </div>
 
-                <div className="lg:col-span-4">
-                  <h3 className="text-3xl lg:text-4xl font-light text-zinc-900 mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm tracking-wider uppercase text-zinc-500">{service.subtitle}</p>
+          <div className="space-y-16">
+            <div className="group">
+              <div className="flex items-start justify-between mb-6 pb-6 border-b border-white/10">
+                <div>
+                  <h3 className="text-4xl font-bold text-white mb-3">Aerial</h3>
+                  <p className="text-zinc-500 text-sm tracking-wider uppercase">Drone Cinematografie</p>
                 </div>
-
-                <div className="lg:col-span-6">
-                  <p className="text-zinc-600 leading-relaxed text-lg">
-                    {service.description}
-                  </p>
-                </div>
-
-                <div className="lg:col-span-1 flex justify-end">
-                  <div className={`transform transition-transform duration-300 ${hoveredIndex === index ? 'rotate-45' : ''}`}>
-                    <Minus className="w-6 h-6 text-zinc-400" />
-                  </div>
-                </div>
+                <div className="text-8xl font-bold text-zinc-900 group-hover:text-amber-500 transition-colors">01</div>
               </div>
+              <p className="text-zinc-400 text-lg leading-relaxed">
+                Dynamische luchtbeelden die architectuur in context plaatsen. Van sweeping establishing
+                shots tot intieme detail werk - alles met een cinematografische aanpak.
+              </p>
             </div>
-          ))}
+
+            <div className="group">
+              <div className="flex items-start justify-between mb-6 pb-6 border-b border-white/10">
+                <div>
+                  <h3 className="text-4xl font-bold text-white mb-3">Motion</h3>
+                  <p className="text-zinc-500 text-sm tracking-wider uppercase">Video & Tijdlapses</p>
+                </div>
+                <div className="text-8xl font-bold text-zinc-900 group-hover:text-amber-500 transition-colors">02</div>
+              </div>
+              <p className="text-zinc-400 text-lg leading-relaxed">
+                Bewegende beelden die verhalen vertellen. Van bouwproces documentatie tot showreels
+                die de essentie van een locatie vangen.
+              </p>
+            </div>
+
+            <div className="group">
+              <div className="flex items-start justify-between mb-6 pb-6 border-b border-white/10">
+                <div>
+                  <h3 className="text-4xl font-bold text-white mb-3">Stills</h3>
+                  <p className="text-zinc-500 text-sm tracking-wider uppercase">Fotografie</p>
+                </div>
+                <div className="text-8xl font-bold text-zinc-900 group-hover:text-amber-500 transition-colors">03</div>
+              </div>
+              <p className="text-zinc-400 text-lg leading-relaxed">
+                Statische beelden waar elke lijn, textuur en lichtval meetelt. Architectuurfotografie
+                die verder gaat dan documentatie.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div className="mt-20 grid grid-cols-1 lg:grid-cols-3 gap-12">
-          <div>
-            <div className="text-5xl font-light text-zinc-900 mb-3">48u</div>
-            <p className="text-zinc-600">Standaard levertijd na opname. Rush mogelijk op aanvraag.</p>
+        <div className="grid md:grid-cols-3 gap-1 bg-white/5">
+          <div className="bg-black p-12 hover:bg-zinc-950 transition-colors group cursor-pointer">
+            <div className="text-5xl font-bold text-white mb-4 group-hover:text-amber-500 transition-colors">24h</div>
+            <p className="text-zinc-400 leading-relaxed">
+              Rush levering beschikbaar. First cuts binnen 24 uur, finaal binnen 48 uur.
+            </p>
           </div>
-          <div>
-            <div className="text-5xl font-light text-zinc-900 mb-3">RAW</div>
-            <p className="text-zinc-600">Volledige retouche in Adobe Suite. Subtiel en naturel.</p>
+
+          <div className="bg-black p-12 hover:bg-zinc-950 transition-colors group cursor-pointer">
+            <div className="text-5xl font-bold text-white mb-4 group-hover:text-amber-500 transition-colors">8K</div>
+            <p className="text-zinc-400 leading-relaxed">
+              Nieuwste DJI Inspire 3 met 8K sensor. Toekomstbestendig materiaal.
+            </p>
           </div>
-          <div>
-            <div className="text-5xl font-light text-zinc-900 mb-3">NL</div>
-            <p className="text-zinc-600">Landelijk werkzaam. Amsterdam, Rotterdam, Utrecht, Den Haag.</p>
+
+          <div className="bg-black p-12 hover:bg-zinc-950 transition-colors group cursor-pointer">
+            <div className="text-5xl font-bold text-white mb-4 group-hover:text-amber-500 transition-colors">NL</div>
+            <p className="text-zinc-400 leading-relaxed">
+              Landelijk werkzaam. Alle vergunningen en certificeringen op orde.
+            </p>
           </div>
         </div>
       </div>

@@ -1,90 +1,136 @@
-import { ArrowRight, Minus } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 export default function Hero() {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const parallaxX = (mousePos.x - window.innerWidth / 2) * 0.02;
+  const parallaxY = (mousePos.y - window.innerHeight / 2) * 0.02;
+
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-20 bg-zinc-50 grain">
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-amber-50/40"></div>
+    <section id="home" className="relative min-h-screen flex items-center pt-20 bg-[#0a0a0a] overflow-hidden">
+      <div className="absolute inset-0 grid-lines opacity-20"></div>
 
-      <div className="max-w-[1400px] mx-auto px-8 lg:px-12 w-full grid lg:grid-cols-2 gap-16 items-center">
-        <div className="relative z-10">
-          <div className="flex items-center gap-4 mb-12">
-            <div className="h-[1px] w-12 bg-zinc-900 draw-line"></div>
-            <span className="text-sm tracking-[0.3em] uppercase text-zinc-600">Aerial Excellence</span>
-          </div>
+      <div
+        className="absolute top-1/4 right-1/4 w-[600px] h-[600px] rounded-full blur-[120px] bg-gradient-to-br from-amber-500/20 to-orange-500/20"
+        style={{
+          transform: `translate(${parallaxX}px, ${parallaxY}px) translateY(${scrollY * 0.5}px)`
+        }}
+      ></div>
 
-          <div className="reveal-line mb-4">
-            <h1 className="text-[clamp(2.5rem,8vw,5.5rem)] font-light leading-[0.95] text-zinc-900 slide-up">
-              Vastgoed
-            </h1>
-          </div>
+      <div className="max-w-[1600px] mx-auto px-8 lg:px-16 w-full relative z-10">
+        <div className="grid lg:grid-cols-12 gap-16 items-center">
+          <div className="lg:col-span-7">
+            <div className="mb-8 overflow-hidden">
+              <div className="inline-flex items-center gap-2 fade-in-up">
+                <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
+                <span className="text-xs tracking-[0.4em] uppercase text-zinc-500 font-light">Beschikbaar voor nieuwe projecten</span>
+              </div>
+            </div>
 
-          <div className="reveal-line mb-4">
-            <h1 className="text-[clamp(2.5rem,8vw,5.5rem)] font-light leading-[0.95] text-zinc-900 slide-up" style={{ animationDelay: '0.1s' }}>
-              door een
-            </h1>
-          </div>
-
-          <div className="reveal-line mb-12">
-            <h1 className="text-[clamp(2.5rem,8vw,5.5rem)] leading-[0.95] text-zinc-900 slide-up" style={{ animationDelay: '0.2s' }}>
-              <span className="italic font-serif">andere</span> <span className="font-light">lens</span>
-            </h1>
-          </div>
-
-          <p className="text-lg text-zinc-600 mb-12 max-w-lg leading-relaxed scale-in" style={{ animationDelay: '0.4s' }}>
-            Wij creëren visuele verhalen voor vastgoed. Geen standaard luchtfoto's,
-            maar doordachte beelden die emotie en context geven aan elke locatie.
-          </p>
-
-          <div className="flex items-center gap-8 scale-in" style={{ animationDelay: '0.6s' }}>
-            <a
-              href="#contact"
-              className="group relative inline-flex items-center gap-3 px-8 py-4 bg-zinc-900 text-white overflow-hidden"
-            >
-              <span className="relative z-10 text-sm tracking-wider uppercase">Start Project</span>
-              <ArrowRight className="relative z-10 w-4 h-4 transition-transform group-hover:translate-x-1" />
-              <div className="absolute inset-0 bg-amber-600 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
-            </a>
-
-            <button className="text-sm tracking-wider uppercase text-zinc-600 hover:text-zinc-900 transition-colors border-b border-zinc-300 hover:border-zinc-900 pb-1">
-              Bekijk Werk
-            </button>
-          </div>
-        </div>
-
-        <div className="relative lg:block hidden scale-in" style={{ animationDelay: '0.3s' }}>
-          <div className="relative aspect-[3/4] overflow-hidden">
-            <img
-              src="https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="Luxury property aerial view"
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-            />
-            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/60 to-transparent">
-              <div className="flex items-center gap-4 text-white">
-                <Minus className="w-8 h-8" />
-                <div>
-                  <p className="text-xs tracking-widest uppercase opacity-70">Featured</p>
-                  <p className="text-sm">Penthouse Amsterdam</p>
+            <h1 className="mb-12 leading-[0.9]">
+              <div className="overflow-hidden mb-6">
+                <div className="text-[clamp(4rem,12vw,11rem)] font-bold tracking-tighter text-white fade-in-up" style={{ animationDelay: '0.1s' }}>
+                  LUCHT
                 </div>
+              </div>
+              <div className="overflow-hidden mb-6">
+                <div className="text-[clamp(4rem,12vw,11rem)] font-bold tracking-tighter text-outline fade-in-up" style={{ animationDelay: '0.2s' }}>
+                  BEELD
+                </div>
+              </div>
+              <div className="overflow-hidden">
+                <div className="text-[clamp(2rem,5vw,4rem)] font-light tracking-wide text-zinc-400 fade-in-up" style={{ fontFamily: 'Playfair Display, serif', animationDelay: '0.3s' }}>
+                  voor vastgoed
+                </div>
+              </div>
+            </h1>
+
+            <div className="max-w-xl fade-in-up" style={{ animationDelay: '0.4s' }}>
+              <p className="text-lg text-zinc-400 leading-relaxed mb-8">
+                Wij maken geen foto's. Wij ontwerpen visuele verhalen die emotie
+                activeren en waarde creëren. Elk frame is een strategische beslissing.
+              </p>
+
+              <div className="flex items-center gap-6">
+                <a
+                  href="#contact"
+                  className="group relative px-10 py-5 bg-white text-black font-medium overflow-hidden"
+                >
+                  <span className="relative z-10 text-sm tracking-wider">START EEN PROJECT</span>
+                  <div className="absolute inset-0 bg-amber-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                </a>
+
+                <button className="text-sm tracking-wider text-zinc-500 hover:text-white transition-colors flex items-center gap-2">
+                  <span className="w-12 h-[1px] bg-zinc-700"></span>
+                  Scroll om te ontdekken
+                </button>
               </div>
             </div>
           </div>
 
-          <div className="absolute -right-12 top-24 bg-white p-8 shadow-2xl scale-in" style={{ animationDelay: '0.8s' }}>
-            <div className="text-center">
-              <p className="text-5xl font-light text-zinc-900 mb-1">500+</p>
-              <p className="text-xs tracking-widest uppercase text-zinc-500">Projecten</p>
+          <div className="lg:col-span-5 relative">
+            <div className="relative perspective-1000">
+              <div
+                className="relative aspect-[3/4] overflow-hidden fade-in-up"
+                style={{
+                  animationDelay: '0.5s',
+                  transform: `translateX(${parallaxX * 2}px) translateY(${parallaxY * 2}px)`
+                }}
+              >
+                <img
+                  src="https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  alt="Featured work"
+                  className="w-full h-full object-cover"
+                  style={{ filter: 'grayscale(100%) contrast(1.1)' }}
+                />
+                <div className="absolute inset-0 mix-blend-multiply bg-gradient-to-t from-black via-transparent to-transparent"></div>
+              </div>
+
+              <div
+                className="absolute -bottom-12 -left-12 bg-white text-black p-8 rotate-3 hover:rotate-0 transition-transform duration-500 cursor-pointer"
+                style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.5)' }}
+              >
+                <div className="text-6xl font-bold mb-2">500+</div>
+                <div className="text-sm tracking-widest uppercase opacity-60">Projecten</div>
+              </div>
+
+              <div
+                className="absolute top-0 -right-16 w-32 h-32 border border-white/10 rounded-full flex items-center justify-center animate-rotate-slow"
+              >
+                <div className="text-[10px] tracking-widest uppercase text-center text-zinc-500">
+                  • DRONE<br/>• FOTOGRAFIE<br/>• VIDEO
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="absolute bottom-12 left-8 lg:left-12 flex items-center gap-8 scale-in" style={{ animationDelay: '1s' }}>
-        <div className="flex items-center gap-3">
-          <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-          <span className="text-xs tracking-wider uppercase text-zinc-500">Nu beschikbaar</span>
+        <div className="absolute bottom-12 left-8 lg:left-16 fade-in-up" style={{ animationDelay: '0.6s' }}>
+          <div className="flex items-center gap-4 text-xs tracking-widest uppercase text-zinc-600">
+            <span>Amsterdam</span>
+            <span className="w-px h-6 bg-zinc-800"></span>
+            <span>2024</span>
+          </div>
         </div>
-        <div className="h-6 w-[1px] bg-zinc-300"></div>
-        <span className="text-xs text-zinc-400">Nederland</span>
       </div>
     </section>
   );
