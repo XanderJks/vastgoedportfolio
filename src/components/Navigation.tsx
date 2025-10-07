@@ -1,3 +1,4 @@
+import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 interface NavigationProps {
@@ -6,6 +7,7 @@ interface NavigationProps {
 }
 
 export default function Navigation({ activeSection, setActiveSection }: NavigationProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -24,6 +26,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
+    setIsMenuOpen(false);
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -39,12 +42,12 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
             L/B
           </button>
 
-          <div className="flex items-center gap-6 lg:gap-12">
+          <div className="hidden md:flex items-center gap-12">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-[10px] lg:text-xs tracking-[0.3em] uppercase text-zinc-500 hover:text-white transition-colors relative group font-mono"
+                className="text-xs tracking-[0.3em] uppercase text-zinc-500 hover:text-white transition-colors relative group font-mono"
               >
                 {item.label}
                 <span className={`absolute -bottom-2 left-0 h-px bg-amber-500 transition-all duration-300 ${activeSection === item.id ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
@@ -52,13 +55,43 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
             ))}
             <a
               href="#contact"
-              className="px-4 lg:px-8 py-2 lg:py-3 bg-white text-black text-[10px] lg:text-xs tracking-[0.3em] uppercase font-bold hover:bg-amber-500 transition-colors font-mono"
+              className="px-8 py-3 bg-white text-black text-xs tracking-[0.3em] uppercase font-bold hover:bg-amber-500 transition-colors font-mono"
+            >
+              CONTACT
+            </a>
+          </div>
+
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden text-white"
+          >
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+      </div>
+
+      {isMenuOpen && (
+        <div className="md:hidden fixed inset-0 bg-black z-40 flex items-center justify-center">
+          <div className="space-y-8 text-center">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="block text-5xl font-black text-white hover:text-amber-500 transition-colors"
+              >
+                {item.label}
+              </button>
+            ))}
+            <a
+              href="#contact"
+              onClick={() => setIsMenuOpen(false)}
+              className="block text-5xl font-black text-amber-500"
             >
               CONTACT
             </a>
           </div>
         </div>
-      </div>
+      )}
     </nav>
   );
 }
