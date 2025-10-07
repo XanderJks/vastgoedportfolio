@@ -73,10 +73,9 @@ export default function Hero() {
               <div className="flex items-center gap-6">
                 <a
                   href="#contact"
-                  className="group relative px-10 py-5 bg-white text-black font-medium overflow-hidden"
+                  className="group relative px-10 py-5 bg-white text-black font-medium overflow-hidden transition-colors hover:bg-amber-500"
                 >
-                  <span className="relative z-10 text-sm tracking-wider">START EEN PROJECT</span>
-                  <div className="absolute inset-0 bg-amber-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                  <span className="text-sm tracking-wider font-semibold">START EEN PROJECT</span>
                 </a>
 
                 <button className="text-sm tracking-wider text-zinc-500 hover:text-white transition-colors flex items-center gap-2">
