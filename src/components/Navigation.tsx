@@ -40,7 +40,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
             onClick={() => scrollToSection('home')}
             className="text-2xl font-bold tracking-tighter text-white hover:text-amber-500 transition-colors"
           >
-            L—B
+            S—V
           </button>
 
           <div className="hidden md:flex items-center gap-16">

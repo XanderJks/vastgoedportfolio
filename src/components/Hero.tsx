@@ -49,12 +49,12 @@ export default function Hero() {
             <h1 className="mb-12 leading-[0.9]">
               <div className="overflow-hidden mb-6">
                 <div className="text-[clamp(4rem,12vw,11rem)] font-bold tracking-tighter text-white fade-in-up" style={{ animationDelay: '0.1s' }}>
-                  LUCHT
+                  SKY
                 </div>
               </div>
               <div className="overflow-hidden mb-6">
                 <div className="text-[clamp(4rem,12vw,11rem)] font-bold tracking-tighter text-outline fade-in-up" style={{ animationDelay: '0.2s' }}>
-                  BEELD
+                  VISION
                 </div>
               </div>
               <div className="overflow-hidden">
