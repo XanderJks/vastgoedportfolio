@@ -30,10 +30,10 @@ export default function Contact() {
         <div className="absolute top-1/4 left-1/4 w-[800px] h-[800px] bg-gradient-to-br from-amber-500/10 to-transparent rounded-full blur-3xl"></div>
       </div>
 
-      <div className="max-w-[1800px] mx-auto px-8 lg:px-20 relative">
+      <div className="max-w-[1800px] mx-auto px-20 relative">
         <div className="mb-32">
           <div className="text-xs font-mono tracking-[0.5em] text-zinc-600 mb-6">005/005 — GET IN TOUCH</div>
-          <h2 className="text-8xl lg:text-[14rem] font-black leading-none tracking-tighter mb-8">
+          <h2 className="text-[14rem] font-black leading-none tracking-tighter mb-8">
             <span className="text-white">CON</span>
             <span style={{ WebkitTextStroke: '2px white', WebkitTextFillColor: 'transparent' }}>TACT</span>
           </h2>
@@ -43,10 +43,10 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-32">
-          <div className="lg:col-span-7">
+        <div className="grid grid-cols-12 gap-32">
+          <div className="col-span-7">
             <form onSubmit={handleSubmit} className="space-y-16">
-              <div className="grid md:grid-cols-2 gap-16">
+              <div className="grid grid-cols-2 gap-16">
                 <div className="relative">
                   <label className="block text-xs tracking-[0.3em] uppercase text-zinc-600 mb-4 font-mono">
                     01 — NAAM
@@ -88,7 +88,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-16">
+              <div className="grid grid-cols-2 gap-16">
                 <div className="relative">
                   <label className="block text-xs tracking-[0.3em] uppercase text-zinc-600 mb-4 font-mono">
                     03 — PROJECT TYPE
@@ -159,7 +159,7 @@ export default function Contact() {
             </form>
           </div>
 
-          <div className="lg:col-span-5 space-y-12">
+          <div className="col-span-5 space-y-12">
             <div className="border-2 border-zinc-900 p-12">
               <div className="text-xs font-mono tracking-[0.5em] text-zinc-600 mb-8">DIRECT CONTACT</div>
               <div className="space-y-8">
@@ -226,7 +226,7 @@ export default function Contact() {
         </div>
 
         <div className="mt-40 pt-20 border-t border-white/10">
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-3 gap-12">
             <div>
               <div className="text-5xl font-black text-white mb-4 font-mono">L/B</div>
               <p className="text-zinc-600 text-sm font-mono leading-relaxed">
@@ -255,7 +255,7 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-0 right-0 px-8 lg:px-20">
+      <div className="absolute bottom-8 left-0 right-0 px-20">
         <div className="max-w-[1800px] mx-auto flex items-center justify-between text-xs font-mono text-zinc-700">
           <span>START PROJECT →</span>
           <span>&lt; 4H RESPONSE</span>

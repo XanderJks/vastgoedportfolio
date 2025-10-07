@@ -46,11 +46,11 @@ export default function Portfolio() {
     <section id="portfolio" className="relative bg-[#0a0a0a] py-40 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
 
-      <div className="max-w-[1800px] mx-auto px-8 lg:px-20">
+      <div className="max-w-[1800px] mx-auto px-20">
         <div className="flex items-end justify-between mb-32">
           <div>
             <div className="text-xs font-mono tracking-[0.5em] text-zinc-600 mb-6">002/005 — SELECTED WORKS</div>
-            <h2 className="text-8xl lg:text-[12rem] font-black leading-none tracking-tighter">
+            <h2 className="text-[12rem] font-black leading-none tracking-tighter">
               <span className="text-white">PORT</span>
               <span style={{ WebkitTextStroke: '2px white', WebkitTextFillColor: 'transparent' }}>FOLIO</span>
             </h2>
@@ -62,8 +62,8 @@ export default function Portfolio() {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-16">
-          <div className="lg:col-span-5">
+        <div className="grid grid-cols-12 gap-16">
+          <div className="col-span-5">
             <div className="space-y-4 sticky top-32">
               {projects.map((project, index) => (
                 <div
@@ -102,7 +102,7 @@ export default function Portfolio() {
             </div>
           </div>
 
-          <div className="lg:col-span-7">
+          <div className="col-span-7">
             <div className="relative aspect-[4/5] mb-12">
               <div className="absolute inset-0 border-2 border-zinc-900"></div>
               <img

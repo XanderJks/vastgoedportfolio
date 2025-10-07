@@ -42,9 +42,9 @@ export default function Hero() {
         </svg>
       </div>
 
-      <div className="max-w-[1800px] mx-auto px-8 lg:px-20 w-full relative z-10">
-        <div className="grid lg:grid-cols-12 gap-20">
-          <div className="lg:col-span-12">
+      <div className="max-w-[1800px] mx-auto px-20 w-full relative z-10">
+        <div className="grid grid-cols-12 gap-20">
+          <div className="col-span-12">
             <div className="flex items-start justify-between mb-20">
               <div className="space-y-6">
                 <div className="flex items-center gap-3">
@@ -82,7 +82,7 @@ export default function Hero() {
                 </div>
               </h1>
 
-              <div className="absolute -right-20 top-1/2 -translate-y-1/2 hidden lg:block">
+              <div className="absolute -right-20 top-1/2 -translate-y-1/2">
                 <div className="w-40 h-40 relative">
                   <svg className="w-full h-full animate-rotate-slow" viewBox="0 0 100 100">
                     <path
@@ -105,9 +105,9 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-16 lg:gap-32">
-              <div className="lg:col-span-2">
-                <p className="text-2xl lg:text-3xl text-zinc-400 leading-relaxed mb-12 font-light">
+            <div className="grid grid-cols-3 gap-32">
+              <div className="col-span-2">
+                <p className="text-3xl text-zinc-400 leading-relaxed mb-12 font-light">
                   Wij fotograferen geen gebouwen—<br/>
                   we documenteren ruimtelijke verhoudingen,<br/>
                   lichtval en architectonische intenties.
@@ -153,7 +153,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-0 right-0 px-8 lg:px-20">
+      <div className="absolute bottom-8 left-0 right-0 px-20">
         <div className="max-w-[1800px] mx-auto flex items-center justify-between text-xs font-mono text-zinc-700">
           <span>SCROLL ↓</span>
           <span>001/005</span>

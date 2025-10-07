@@ -31,11 +31,11 @@ export default function About() {
         ></div>
       </div>
 
-      <div className="max-w-[1800px] mx-auto px-8 lg:px-20 relative">
+      <div className="max-w-[1800px] mx-auto px-20 relative">
         <div className="mb-32">
           <div className="text-xs font-mono tracking-[0.5em] text-zinc-600 mb-6">004/005 — PHILOSOPHY</div>
           <div className="relative">
-            <h2 className="text-8xl lg:text-[14rem] font-black leading-none tracking-tighter">
+            <h2 className="text-[14rem] font-black leading-none tracking-tighter">
               <div className="overflow-hidden">
                 <div
                   className="transition-transform duration-700"
@@ -52,8 +52,8 @@ export default function About() {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-32">
-          <div className="lg:col-span-7 space-y-24">
+        <div className="grid grid-cols-12 gap-32">
+          <div className="col-span-7 space-y-24">
             <div className="relative pl-32">
               <div className="absolute left-0 top-0 text-8xl font-black text-zinc-900 font-mono leading-none select-none">01</div>
               <div className="space-y-6">
@@ -94,7 +94,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 space-y-8">
+          <div className="col-span-5 space-y-8">
             <div className="border-2 border-zinc-900 p-12 relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-amber-500 via-orange-500 to-amber-500 transform origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-1000"></div>
               <div className="relative">
@@ -172,7 +172,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-0 right-0 px-8 lg:px-20">
+      <div className="absolute bottom-8 left-0 right-0 px-20">
         <div className="max-w-[1800px] mx-auto flex items-center justify-between text-xs font-mono text-zinc-700">
           <span>ONZE AANPAK →</span>
           <span>NO COMPROMISE</span>

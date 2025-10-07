@@ -9,11 +9,11 @@ export default function Services() {
 
   return (
     <section id="services" className="relative bg-black py-40 border-y border-white/10">
-      <div className="max-w-[1800px] mx-auto px-8 lg:px-20">
+      <div className="max-w-[1800px] mx-auto px-20">
         <div className="mb-32">
           <div className="text-xs font-mono tracking-[0.5em] text-zinc-600 mb-6">003/005 — CAPABILITIES</div>
           <div className="flex items-end justify-between">
-            <h2 className="text-8xl lg:text-[12rem] font-black leading-none tracking-tighter text-white">
+            <h2 className="text-[12rem] font-black leading-none tracking-tighter text-white">
               SERVICES
             </h2>
             <div className="text-right text-sm font-mono text-zinc-600 space-y-2 mb-4">
@@ -29,24 +29,24 @@ export default function Services() {
               key={service.id}
               className="group relative border-t border-zinc-900 last:border-b hover:bg-white/[0.02] transition-colors"
             >
-              <div className="grid lg:grid-cols-12 gap-8 items-center py-12 lg:py-16">
-                <div className="lg:col-span-1">
+              <div className="grid grid-cols-12 gap-8 items-center py-16">
+                <div className="col-span-1">
                   <div className="text-xs font-mono text-zinc-700">{service.id}</div>
                 </div>
 
-                <div className="lg:col-span-4">
-                  <div className="text-5xl lg:text-7xl font-black group-hover:translate-x-4 transition-transform duration-300">
+                <div className="col-span-4">
+                  <div className="text-7xl font-black group-hover:translate-x-4 transition-transform duration-300">
                     {service.title}
                   </div>
                 </div>
 
-                <div className="lg:col-span-5">
+                <div className="col-span-5">
                   <div className="text-lg text-zinc-400 font-light">
                     {service.desc}
                   </div>
                 </div>
 
-                <div className="lg:col-span-2 text-right">
+                <div className="col-span-2 text-right">
                   <span className="inline-block px-4 py-2 border border-zinc-800 text-xs font-mono tracking-wider text-zinc-500">
                     {service.tag}
                   </span>
@@ -62,8 +62,8 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="mt-32 grid lg:grid-cols-3 gap-1 border-2 border-zinc-900">
-          <div className="bg-[#0a0a0a] p-12 lg:p-16 relative overflow-hidden group">
+        <div className="mt-32 grid grid-cols-3 gap-1 border-2 border-zinc-900">
+          <div className="bg-[#0a0a0a] p-16 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             <div className="relative">
               <div className="text-8xl font-black mb-8 tabular-nums">
@@ -79,7 +79,7 @@ export default function Services() {
             </div>
           </div>
 
-          <div className="bg-[#0a0a0a] p-12 lg:p-16 relative overflow-hidden group">
+          <div className="bg-[#0a0a0a] p-16 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             <div className="relative">
               <div className="text-8xl font-black mb-8 tabular-nums">
@@ -95,7 +95,7 @@ export default function Services() {
             </div>
           </div>
 
-          <div className="bg-[#0a0a0a] p-12 lg:p-16 relative overflow-hidden group">
+          <div className="bg-[#0a0a0a] p-16 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             <div className="relative">
               <div className="text-8xl font-black mb-8">
