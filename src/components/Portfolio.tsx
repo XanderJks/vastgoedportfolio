@@ -1,126 +1,168 @@
 import { useState } from 'react';
 
 export default function Portfolio() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [activeProject, setActiveProject] = useState(0);
 
   const projects = [
     {
-      title: 'VERTEX TOWER',
+      title: 'VERTEX',
+      subtitle: 'Commercial Tower',
       location: 'Rotterdam',
       year: '2024',
+      size: '47.000m²',
+      height: '156m',
       image: 'https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      category: 'Commercial'
     },
     {
-      title: 'DUNE RESIDENCE',
+      title: 'DUNE',
+      subtitle: 'Private Residence',
       location: 'Wassenaar',
       year: '2024',
+      size: '2.400m²',
+      height: '—',
       image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      category: 'Residential'
     },
     {
-      title: 'CANAL LOFT',
+      title: 'CANAL',
+      subtitle: 'Penthouse Development',
       location: 'Amsterdam',
       year: '2023',
+      size: '850m²',
+      height: '42m',
       image: 'https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      category: 'Interior'
     },
     {
-      title: 'HERITAGE ESTATE',
+      title: 'ESTATE',
+      subtitle: 'Heritage Property',
       location: 'Utrecht',
       year: '2024',
+      size: '5.2ha',
+      height: '—',
       image: 'https://images.pexels.com/photos/206172/pexels-photo-206172.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      category: 'Heritage'
     }
   ];
 
   return (
-    <section id="portfolio" className="relative bg-[#0a0a0a] py-40">
-      <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
-        <div className="mb-32">
-          <h2 className="text-7xl lg:text-9xl font-bold text-white mb-4 leading-none">
-            Selected
-          </h2>
-          <h2 className="text-7xl lg:text-9xl font-bold text-outline leading-none">
-            Works
-          </h2>
+    <section id="portfolio" className="relative bg-[#0a0a0a] py-40 overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+      <div className="max-w-[1800px] mx-auto px-8 lg:px-20">
+        <div className="flex items-end justify-between mb-32">
+          <div>
+            <div className="text-xs font-mono tracking-[0.5em] text-zinc-600 mb-6">002/005 — SELECTED WORKS</div>
+            <h2 className="text-8xl lg:text-[12rem] font-black leading-none tracking-tighter">
+              <span className="text-white">PORT</span>
+              <span style={{ WebkitTextStroke: '2px white', WebkitTextFillColor: 'transparent' }}>FOLIO</span>
+            </h2>
+          </div>
+
+          <div className="text-right text-sm font-mono text-zinc-600 space-y-2">
+            <div>{projects.length} PROJECTEN</div>
+            <div>2023—2024</div>
+          </div>
         </div>
 
-        <div className="space-y-32">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="grid lg:grid-cols-12 gap-16 items-center"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <div className={`lg:col-span-7 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-                <div className="relative aspect-[16/10] overflow-hidden bg-zinc-900">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-all duration-700"
-                    style={{
-                      filter: hoveredIndex === index ? 'grayscale(0%)' : 'grayscale(100%)',
-                      transform: hoveredIndex === index ? 'scale(1.05)' : 'scale(1)'
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-black/30 mix-blend-multiply"></div>
-
-                  <div
-                    className={`absolute top-8 right-8 w-24 h-24 border border-white/30 rounded-full flex items-center justify-center transition-all duration-500 ${
-                      hoveredIndex === index ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
-                    }`}
-                  >
-                    <span className="text-xs tracking-widest text-white">VIEW</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className={`lg:col-span-5 ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
-                <div className="space-y-8">
-                  <div className="flex items-center gap-4">
-                    <span className="text-6xl font-bold text-zinc-800">0{index + 1}</span>
-                    <div className="h-px flex-1 bg-white/10"></div>
+        <div className="grid lg:grid-cols-12 gap-16">
+          <div className="lg:col-span-5">
+            <div className="space-y-4 sticky top-32">
+              {projects.map((project, index) => (
+                <div
+                  key={index}
+                  className={`p-8 border-2 cursor-pointer transition-all duration-300 ${
+                    activeProject === index
+                      ? 'border-amber-500 bg-amber-500/5'
+                      : 'border-zinc-900 hover:border-zinc-700'
+                  }`}
+                  onClick={() => setActiveProject(index)}
+                >
+                  <div className="flex items-start justify-between mb-6">
+                    <div>
+                      <div className="text-5xl font-black mb-2">{project.title}</div>
+                      <div className="text-sm text-zinc-500 font-mono">{project.subtitle}</div>
+                    </div>
+                    <div className="text-7xl font-black text-zinc-900">0{index + 1}</div>
                   </div>
 
-                  <div>
-                    <h3 className="text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
-                      {project.title}
-                    </h3>
-                    <div className="flex items-center gap-8 text-zinc-500">
-                      <span className="text-sm tracking-widest uppercase">{project.location}</span>
-                      <span className="w-1 h-1 bg-zinc-700 rounded-full"></span>
-                      <span className="text-sm tracking-widest uppercase">{project.year}</span>
+                  <div className="grid grid-cols-3 gap-4 text-xs font-mono pt-6 border-t border-zinc-800">
+                    <div>
+                      <div className="text-zinc-600 mb-1">LOCATIE</div>
+                      <div className="text-white">{project.location}</div>
+                    </div>
+                    <div>
+                      <div className="text-zinc-600 mb-1">JAAR</div>
+                      <div className="text-white">{project.year}</div>
+                    </div>
+                    <div>
+                      <div className="text-zinc-600 mb-1">GROOTTE</div>
+                      <div className="text-white">{project.size}</div>
                     </div>
                   </div>
+                </div>
+              ))}
+            </div>
+          </div>
 
-                  <div className="inline-block px-6 py-2 border border-white/10 text-xs tracking-widest uppercase text-zinc-400">
-                    {project.category}
+          <div className="lg:col-span-7">
+            <div className="relative aspect-[4/5] mb-12">
+              <div className="absolute inset-0 border-2 border-zinc-900"></div>
+              <img
+                src={projects[activeProject].image}
+                alt={projects[activeProject].title}
+                className="w-full h-full object-cover transition-all duration-700"
+                style={{ filter: 'grayscale(100%) contrast(1.1)' }}
+              />
+
+              <div className="absolute top-0 left-0 right-0 p-8 bg-gradient-to-b from-black/80 to-transparent">
+                <div className="flex items-center justify-between text-xs font-mono">
+                  <span className="text-zinc-400">HOOFDBEELD</span>
+                  <span className="text-zinc-600">8K / RAW</span>
+                </div>
+              </div>
+
+              <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/90 to-transparent">
+                <div className="grid grid-cols-2 gap-4 text-xs font-mono mb-6">
+                  <div>
+                    <div className="text-zinc-600 mb-1">CAMERA</div>
+                    <div className="text-white">DJI Inspire 3</div>
                   </div>
-
-                  <button className="group flex items-center gap-4 text-white hover:text-amber-500 transition-colors">
-                    <span className="text-sm tracking-wider uppercase">Bekijk Project</span>
-                    <svg className="w-12 h-12 transition-transform group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </button>
+                  <div>
+                    <div className="text-zinc-600 mb-1">LENS</div>
+                    <div className="text-white">Zenmuse X9-8K</div>
+                  </div>
+                  <div>
+                    <div className="text-zinc-600 mb-1">HOOGTE</div>
+                    <div className="text-white">{projects[activeProject].height !== '—' ? projects[activeProject].height : 'Grondniveau'}</div>
+                  </div>
+                  <div>
+                    <div className="text-zinc-600 mb-1">LICHT</div>
+                    <div className="text-white">Golden Hour</div>
+                  </div>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
 
-        <div className="mt-40 text-center">
-          <a
-            href="#contact"
-            className="group inline-flex items-center gap-4 px-16 py-8 border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-500"
-          >
-            <span className="text-sm tracking-[0.3em] uppercase font-medium">Meer Projecten</span>
-            <div className="w-12 h-12 border border-current rounded-full flex items-center justify-center group-hover:rotate-90 transition-transform duration-500">
-              <span className="text-2xl">→</span>
+            <div className="grid grid-cols-3 gap-4">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="aspect-[4/3] border-2 border-zinc-900 relative overflow-hidden group cursor-pointer">
+                  <img
+                    src={projects[activeProject].image}
+                    alt={`Detail ${i}`}
+                    className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+                  />
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-xs font-mono tracking-widest">DETAIL 0{i}</span>
+                  </div>
+                </div>
+              ))}
             </div>
-          </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="absolute bottom-8 left-0 right-0 px-8 lg:px-20">
+        <div className="max-w-[1800px] mx-auto flex items-center justify-between text-xs font-mono text-zinc-700">
+          <span>MEER PROJECTEN →</span>
+          <span>004 CASES GETOOND</span>
         </div>
       </div>
     </section>
