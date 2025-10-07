@@ -54,8 +54,8 @@ export default function About() {
 
         <div className="grid lg:grid-cols-12 gap-32">
           <div className="lg:col-span-7 space-y-24">
-            <div className="relative pl-20">
-              <div className="absolute left-0 top-0 text-8xl font-black text-zinc-900 font-mono leading-none">01</div>
+            <div className="relative pl-32">
+              <div className="absolute left-0 top-0 text-8xl font-black text-zinc-900 font-mono leading-none select-none">01</div>
               <div className="space-y-6">
                 <h3 className="text-4xl font-bold text-white">Technische perfectie</h3>
                 <p className="text-xl text-zinc-400 leading-relaxed">
@@ -68,8 +68,8 @@ export default function About() {
 
             <div className="h-px bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900"></div>
 
-            <div className="relative pl-20">
-              <div className="absolute left-0 top-0 text-8xl font-black text-zinc-900 font-mono leading-none">02</div>
+            <div className="relative pl-32">
+              <div className="absolute left-0 top-0 text-8xl font-black text-zinc-900 font-mono leading-none select-none">02</div>
               <div className="space-y-6">
                 <h3 className="text-4xl font-bold text-white">Geen compromissen</h3>
                 <p className="text-xl text-zinc-400 leading-relaxed">
@@ -82,8 +82,8 @@ export default function About() {
 
             <div className="h-px bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900"></div>
 
-            <div className="relative pl-20">
-              <div className="absolute left-0 top-0 text-8xl font-black text-zinc-900 font-mono leading-none">03</div>
+            <div className="relative pl-32">
+              <div className="absolute left-0 top-0 text-8xl font-black text-zinc-900 font-mono leading-none select-none">03</div>
               <div className="space-y-6">
                 <h3 className="text-4xl font-bold text-white">Data-driven aanpak</h3>
                 <p className="text-xl text-zinc-400 leading-relaxed">
