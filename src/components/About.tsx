@@ -48,7 +48,7 @@ export default function About() {
             <div className="sticky top-32">
               <div className="aspect-[3/4] mb-8 overflow-hidden">
                 <img
-                  src="https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  src="https://images.pexels.com/photos/1546168/pexels-photo-1546168.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="Studio"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 />
@@ -63,9 +63,9 @@ export default function About() {
                 </div>
 
                 <div className="border-l-2 border-white/10 pl-8">
-                  <div className="text-5xl font-bold text-white mb-3">ROC Certified</div>
+                  <div className="text-5xl font-bold text-white mb-3">Verzekerd</div>
                   <p className="text-zinc-500">
-                    Volledig gecertificeerd en verzekerd voor commerciële vluchten tot 5M dekking
+                    Volledig verzekerd voor commerciële vluchten met uitgebreide dekking
                   </p>
                 </div>
 
