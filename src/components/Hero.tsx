@@ -64,13 +64,13 @@ export default function Hero() {
               </div>
             </h1>
 
-            <div className="max-w-xl fade-in-up" style={{ animationDelay: '0.4s' }}>
-              <p className="text-lg text-zinc-400 leading-relaxed mb-8">
+            <div className="max-w-xl fade-in-up mb-24" style={{ animationDelay: '0.4s' }}>
+              <p className="text-lg text-zinc-400 leading-relaxed mb-10">
                 Wij maken geen foto's. Wij ontwerpen visuele verhalen die emotie
                 activeren en waarde creëren. Elk frame is een strategische beslissing.
               </p>
 
-              <div className="flex items-center gap-6">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
                 <a
                   href="#contact"
                   className="group relative px-10 py-5 bg-white text-black font-medium overflow-hidden transition-colors hover:bg-amber-500"
