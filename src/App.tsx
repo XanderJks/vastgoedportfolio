@@ -5,7 +5,6 @@ import Portfolio from './components/Portfolio';
 import About from './components/About';
 import Contact from './components/Contact';
 import Navigation from './components/Navigation';
-import AdminDashboard from './components/AdminDashboard';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -18,7 +17,6 @@ function App() {
       <Portfolio />
       <About />
       <Contact />
-      <AdminDashboard />
     </div>
   );
 }
